@@ -1,0 +1,115 @@
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+}
+
+.gallery h1 {
+    margin-bottom: 50px;
+}
+
+.galleryWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1800px;
+    gap: 20px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+   
+}
+
+.singleImage {
+    cursor: pointer;
+    width: 300px;
+    
+}
+
+.singleImage img {
+    max-width: 100%;
+    border-radius: 5px;
+    aspect-ratio: 3/2;
+    
+    
+}
+
+.singleImage img:hover {
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+}
+
+
+
+
+@keyframes sliderAppear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+.sliderParent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.sliderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    animation-name: sliderAppear;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+}
+
+.sliderWrapper-layer {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.fullScreenImage {
+    position: relative;
+}
+
+.fullScreenImage img {
+    max-width: 1000px;
+    border-radius: 5px;
+}
+
+.sliderWrapper i {
+    color: white;
+    opacity: 0.5;
+}
+
+.btnPrev, .btnNext {
+    font-size: 3.5rem;
+    margin: 0 10px;
+}
+
+.btnClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+}
+
+.btnPrev:hover, .btnNext:hover, .btnClose:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+
+
