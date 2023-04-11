@@ -6,8 +6,8 @@ import '../App.css'
 function HeroSection() {
   return (
     <div className='hero-container'>
-        <h1>Hệ thống Quán hát Karaoke MuzicBox chào mừng quý khách</h1>
-        <p>Chúng tôi cung cấp dịch vụ hát Karaoke hàng đầu tại thành phố Hà Nội</p>
+        <h1>MuzicBox xin kính chào quý khách</h1>
+        <p>MuzicBox cung cấp dịch vụ quán hát Karaoke hàng đầu tại Hà Nội</p>
         <div className='btn-container'>
             <div className='hero-btns'>
                 <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
