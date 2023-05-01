@@ -67,13 +67,14 @@ h1 {
     position: absolute;
     bottom: 0;
     margin-left: 10px;
-    padding: 8px 10px;
+    padding: 10px 12px;
     max-width: calc((100%) - 60px);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
-    color: #fff;
-    background-color: #ff0062;
+    color: #1b1b1b;
+    background-color: #ffe44e;
     box-sizing: border-box;
+    border-radius: 2px;
   }
   
 .cards__item__img {
