@@ -4,6 +4,10 @@
     margin-bottom: 10rem;
 }
 
+.date-picker-container {
+  max-width: 60vw;
+}
+
 .react-calendar {
     width: 450px;
     max-width: 100%;
