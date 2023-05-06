@@ -5,7 +5,6 @@ import './Cards.css'
 function Cards() {
   return (
     <div className='cards'>
-        <h1>HỆ THỐNG KARAOKE MUZICBOX</h1>
         <div className='cards__container'>
           <div className='cards__wrapper'>
             <ul className='cards__items'>
@@ -13,7 +12,7 @@ function Cards() {
                 src="/images/cardbackground.png"
                 text='MuzicBox 237 Xã Đàn'
                 label='Đống Đa'
-                path='/coso/237-xa-dan'
+                path='/dat-phong'
               />
               <CardItem 
                 src="/images/cardbackground.png"

@@ -1,12 +1,46 @@
-.date-picker-wrapper {
+.booking-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-bottom: 10rem;
+    width: 1400px;
+    margin: 5vh auto;
+}
+
+.place-container {
+  justify-content: flex-end;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0;
+}
+
+.place-container h3, .date-picker-container h3{
+  text-align: center;
+}
+
+.place-wrapper {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .date-picker-container {
-  max-width: 60vw;
+  width: 40%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 }
+
+.cards__item {
+    display: flex;
+    flex: 1;
+    margin: 1rem 1rem;
+    border-radius: 10px;
+    min-width: 200px;
+    max-width: 200px;
+    flex-grow: 0;
+  }
 
 .react-calendar {
     width: 450px;
@@ -16,6 +50,7 @@
     border: 1px solid rgb(209 213 219);
     font-family: Manrope, Helvetica, sans-serif;
     line-height: 1.125em;
+    margin: 1rem 0;
   }
   .react-calendar--doubleView {
     width: 700px;
@@ -183,3 +218,4 @@
   .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: rgb(238 242 255);
   }
+
