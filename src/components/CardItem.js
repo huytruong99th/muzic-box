@@ -5,6 +5,9 @@ function CardItem(props) {
 
 const handleClick = () => {
     const newLocation = props.value;
+    if (props.onClick() === undefined) {
+        window.scrollTo(0, 0);
+    }
     props.onClick(newLocation);
 }
 
