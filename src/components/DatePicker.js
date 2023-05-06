@@ -32,7 +32,7 @@ function DatePicker() {
         let currentHour = d.getHours();
         let currentMinutes = d.getMinutes();
         console.log(currentHour);
-        if ( currentHour <= 8 ) {
+        if ( currentHour <= 8 || date.justDate.getDate() !== d.getDate() ) {
             currentHour = 8;
         };
         const { justDate } = date;
@@ -43,7 +43,7 @@ function DatePicker() {
         for (let i = beginning; i <= end ; i = add(i, { minutes: interval })) {
             times.push(i);
         };
-        if (currentMinutes >= 30) {
+        if (currentMinutes >= 30 && date.justDate.getDate() === d.getDate()) {
             times.shift();
         };
         return times
@@ -75,34 +75,55 @@ function DatePicker() {
                     <h3>CHỌN CƠ SỞ ĐẶT PHÒNG</h3>
                 </div>
                 <div className="place-wrapper">                
-                <CardItem 
-                    src="/images/cardbackground.png"
-                    text='MuzicBox 237 Xã Đàn'
-                    value='MuzicBox 237 Xã Đàn'
-                    label='Đống Đa'
-                    onClick={handleLocationClick}
-                />
-                <CardItem 
-                    src="/images/cardbackground.png"
-                    text='MuzicBox 111 Xã Đàn'
-                    value='MuzicBox 111 Xã Đàn'
-                    label='Đống Đa'
-                    onClick={handleLocationClick}
-                />
-                <CardItem 
-                    src="/images/cardbackground.png"
-                    text='MuzicBox 111 Xã Đàn'
-                    value='MuzicBox 111 Xã Đàn'
-                    label='Đống Đa'
-                    onClick={handleLocationClick}
-                />
-                <CardItem 
-                    src="/images/cardbackground.png"
-                    text='MuzicBox 111 Xã Đàn'
-                    value='MuzicBox 111 Xã Đàn'
-                    label='Đống Đa'
-                    onClick={handleLocationClick}
-                />
+                    <CardItem
+                        src="/images/cardbackground.png"
+                        text='MuzicBox 237 Xã Đàn'
+                        value='MuzicBox 237 Xã Đàn'
+                        label='Đống Đa'
+                        onClick={handleLocationClick}
+                    />
+                    <CardItem 
+                        src="/images/cardbackground.png"
+                        text='MuzicBox 111 Ô Chợ Dừa'
+                        value='MuzicBox 111 Xã Đàn'
+                        label='Đống Đa'
+                        onClick={handleLocationClick}
+                    />
+                    <CardItem 
+                        src="/images/cardbackground.png"
+                        text='MuzicBox 345 Hoàng Mai'
+                        value='MuzicBox 345 Hoàng Mai'
+                        label='Hoàng Mai'
+                        onClick={handleLocationClick}
+                    />
+                    <CardItem 
+                        src="/images/cardbackground.png"
+                        text='MuzicBox 23 Đường Láng'
+                        value='MuzicBox 23 Đường Láng'
+                        label='Đống Đa'
+                        onClick={handleLocationClick}
+                    />
+                    <CardItem 
+                        src="/images/cardbackground.png"
+                        text='MuzicBox 44 Nguyễn Chí Thanh'
+                        value='MuzicBox 44 Nguyễn Chí Thanh'
+                        label='Đống Đa'
+                        onClick={handleLocationClick}
+                    />
+                    <CardItem 
+                        src="/images/cardbackground.png"
+                        text='MuzicBox 88 Xuân Thuỷ'
+                        value='MuzicBox 88 Xuân Thuỷ'
+                        label='Đống Đa'
+                        onClick={handleLocationClick}
+                    />
+                    <CardItem 
+                        src="/images/cardbackground.png"
+                        text='MuzicBox 66 Trần Khát Chân'
+                        value='MuzicBox 66 Trần Khát Chân'
+                        label='Hai Bà Trưng'
+                        onClick={handleLocationClick}
+                    />
                 </div>
             </div>
 
@@ -131,9 +152,9 @@ function DatePicker() {
                         </div>
                         {date.dateTime?
                             <div className="booking-info">
-                                <p>Cơ Sở đã chọn: {location.Location}</p>
-                                <p>Ngày Đã Chọn: {String(format(date.justDate, 'dd/MM/yyyy'))}</p>
-                                <p>Giờ Đã Chọn: {String(format(date.dateTime, 'kk:mm'))} </p>
+                                <p>Cơ sở đã chọn: <span>{location.Location}</span></p>
+                                <p>Ngày đã chọn: <span>{String(format(date.justDate, 'dd/MM/yyyy'))}</span></p>
+                                <p>Giờ đã chọn: <span>{String(format(date.dateTime, 'kk:mm'))}</span></p>
                             </div>
                             : 
                             <>
@@ -142,6 +163,7 @@ function DatePicker() {
                     : 
                     <Calendar 
                     minDate={new Date()}
+                    locale='vi'
                     view='month'
                     onClickDay={(date) => setDate((prev) => ({...prev, justDate: date}))}
                     />
