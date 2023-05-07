@@ -60,7 +60,7 @@ function Navbar() {
                   </li>
               
                 </ul>
-                {button && <Button buttonStyle='btn--outline'>ĐẶT PHÒNG</Button>}
+                {button && <Button buttonStyle='btn--outline' onClick={() => window.scrollTo(0, 0)}>ĐẶT PHÒNG</Button>}
             </div>
         </nav>
     </>

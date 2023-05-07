@@ -151,11 +151,42 @@ function DatePicker() {
                             }
                         </div>
                         {date.dateTime?
+                        <div>
                             <div className="booking-info">
-                                <p>Cơ sở đã chọn: <span>{location.Location}</span></p>
-                                <p>Ngày đã chọn: <span>{String(format(date.justDate, 'dd/MM/yyyy'))}</span></p>
-                                <p>Giờ đã chọn: <span>{String(format(date.dateTime, 'kk:mm'))}</span></p>
+                                <p className='font-bold'>Thông tin đặt phòng của bạn:</p>
+                                <p className='font-medium'>Cơ sở đã chọn: <span className='font-semibold text-yellow-600'>{location.Location}</span></p>
+                                <p className='font-medium'>Ngày: <span className='font-semibold text-yellow-600 mr-3'>{String(format(date.justDate, 'dd/MM/yyyy'))}</span> Giờ: <span className='font-semibold text-yellow-600'>{String(format(date.dateTime, 'kk:mm'))}</span></p>
                             </div>
+                            <div>
+                                <form className='customer-information'>
+                                    <div>
+                                        <label for='phone-number-input' className='font-semibold'>Nhập SĐT của bạn: </label>
+                                        <input 
+                                            type='tel' 
+                                            id='phone-number-input' 
+                                            name="phone"
+                                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                            maxlength="10"
+                                            required
+                                        >
+                                        </input>
+                                    </div>
+                                    <div>
+                                        <label for='email-input' className='font-semibold'>Nhập email của bạn (nếu có): </label>
+                                        <input type='email' id='email-input' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"></input>
+                                    </div>
+                                    <div>
+                                        <label for='note-input' className='font-semibold'>Ghi chú dành cho nhân viên: </label>
+                                        <div>
+                                            <input type='text' id='note-input'></input>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type='submit' value='ĐẶT PHÒNG' />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                             : 
                             <>
                             </>}
@@ -168,6 +199,8 @@ function DatePicker() {
                     onClickDay={(date) => setDate((prev) => ({...prev, justDate: date}))}
                     />
                     }
+
+
                 </div>
                 :
                 <div></div>
