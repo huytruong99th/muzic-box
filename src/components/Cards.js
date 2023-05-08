@@ -1,7 +1,6 @@
 import React from 'react'
 import CardItem from './CardItem';
-import './Cards.css'
-import useLocation from './function/GeoLocation';
+import './Cards.css';
 
 function Cards() {
   return (
@@ -9,7 +8,6 @@ function Cards() {
         <div className='cards__container'>
           <div className='cards__wrapper'>
             <ul className='cards__items'>
-              <useLocation />
               <CardItem 
                 src="/images/cardbackground.png"
                 text='MuzicBox 237 Xã Đàn'

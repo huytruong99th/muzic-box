@@ -13,22 +13,22 @@ function useLocation() {
                     });
             });
         }
-    };
+    }
 
     const calculateDistance = () => {
         console.log('dog')
     }
     
     return (
-        <div>
-            <h1 onClick={event => {
+        <div className='ok'>
+            <h1 onClick={ () => {
                             locate();
                             calculateDistance();
                         }}>
                 Toạ độ là {location}
             </h1>
         </div>
-    );
+    )
 
 }
 
