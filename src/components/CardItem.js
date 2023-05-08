@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 function CardItem(props) {
 
 const handleClick = () => {
-    const newLocation = props.value;
+    const newStore = props.value;
     if (props.onClick() === undefined) {
         window.scrollTo(0, 0);
     }
-    props.onClick(newLocation);
+    props.onClick(newStore);
 }
 
   return (

@@ -4,7 +4,6 @@ import 'react-calendar/dist/Calendar.css';
 import './DatePicker.css';
 import CardItem from './CardItem';
 import { add, format, setDefaultOptions } from "date-fns";
-import Cards from './Cards';
 import { vi } from 'date-fns/locale'
 
 
@@ -20,8 +19,8 @@ function DatePicker() {
         Date: null
     });
 
-    const [location, setLocation] = useState({
-        Location: null
+    const [store, setStore] = useState({
+        Store: null
     });
 
     const getTimes = () => {
@@ -58,12 +57,12 @@ function DatePicker() {
 
     const times = getTimes()
 
-    const handleLocationClick = (newLocation) => {
-        setLocation({
-            Location: newLocation
+    const handleStoreClick = (newStore) => {
+        setStore({
+            Store: newStore
         });
         Back();
-        console.log(location.Location)
+        console.log(store.Store)
 
     }
 
@@ -80,49 +79,49 @@ function DatePicker() {
                         text='MuzicBox 237 Xã Đàn'
                         value='MuzicBox 237 Xã Đàn'
                         label='Đống Đa'
-                        onClick={handleLocationClick}
+                        onClick={handleStoreClick}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
                         text='MuzicBox 111 Ô Chợ Dừa'
                         value='MuzicBox 111 Xã Đàn'
                         label='Đống Đa'
-                        onClick={handleLocationClick}
+                        onClick={handleStoreClick}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
                         text='MuzicBox 345 Hoàng Mai'
                         value='MuzicBox 345 Hoàng Mai'
                         label='Hoàng Mai'
-                        onClick={handleLocationClick}
+                        onClick={handleStoreClick}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
                         text='MuzicBox 23 Đường Láng'
                         value='MuzicBox 23 Đường Láng'
                         label='Đống Đa'
-                        onClick={handleLocationClick}
+                        onClick={handleStoreClick}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
                         text='MuzicBox 44 Nguyễn Chí Thanh'
                         value='MuzicBox 44 Nguyễn Chí Thanh'
                         label='Đống Đa'
-                        onClick={handleLocationClick}
+                        onClick={handleStoreClick}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
                         text='MuzicBox 88 Xuân Thuỷ'
                         value='MuzicBox 88 Xuân Thuỷ'
                         label='Đống Đa'
-                        onClick={handleLocationClick}
+                        onClick={handleStoreClick}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
                         text='MuzicBox 66 Trần Khát Chân'
                         value='MuzicBox 66 Trần Khát Chân'
                         label='Hai Bà Trưng'
-                        onClick={handleLocationClick}
+                        onClick={handleStoreClick}
                     />
                 </div>
             </div>
@@ -132,7 +131,7 @@ function DatePicker() {
                     <h3>CHỌN THỜI GIAN ĐẶT PHÒNG</h3>
                 </div>
 
-                {location.Location ? 
+                {store.Store ? 
                 <div>
                     {date.justDate ? 
                     <div className='mt-4'>
@@ -154,7 +153,7 @@ function DatePicker() {
                         <div>
                             <div className="booking-info">
                                 <p className='font-bold'>Thông tin đặt phòng của bạn:</p>
-                                <p className='font-medium'>Cơ sở đã chọn: <span className='font-semibold text-yellow-600'>{location.Location}</span></p>
+                                <p className='font-medium'>Cơ sở đã chọn: <span className='font-semibold text-yellow-600'>{store.Store}</span></p>
                                 <p className='font-medium'>Ngày: <span className='font-semibold text-yellow-600 mr-3'>{String(format(date.justDate, 'dd/MM/yyyy'))}</span> Giờ: <span className='font-semibold text-yellow-600'>{String(format(date.dateTime, 'kk:mm'))}</span></p>
                             </div>
                             <div>
