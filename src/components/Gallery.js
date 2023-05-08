@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Gallery.css'
-import useLocation from './function/GeoLocation';
 
 const galleryImages = [
     {
@@ -68,7 +67,6 @@ function Gallery() {
 
   return (
     <div className='gallery'>
-        <useLocation />
         <h1>HÌNH ẢNH TẠI HỆ THỐNG KARAOKE MUZICBOX</h1>
         {openModal &&
             <div className='sliderParent'>

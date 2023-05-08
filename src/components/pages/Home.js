@@ -4,6 +4,7 @@ import HeroSection from '../HeroSection';
 import Cards from '../Cards'
 import Gallery from '../Gallery';
 import Footer from '../Footer';
+import useLocation from '../function/geolocation';
 
 function Home() {
     return (
@@ -11,6 +12,7 @@ function Home() {
             <HeroSection />
             <Cards />
             <Gallery />
+            <useLocation />
         </>
     );
 }
