@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, {useState} from 'react';
 
-function useLocation() {
-    const [location, setLocation] = useState();
+function useLocation1() {
+    const [location1, setLocation1] = useState();
 
     const locate = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
-                setLocation(
+                setLocation1(
                     {
                     lat: position.coords.latitude,
                     long: position.coords.longitude
@@ -25,11 +25,11 @@ function useLocation() {
                             locate();
                             calculateDistance();
                         }}>
-                Toạ độ là {location}
+                Toạ độ là {location1}
             </h1>
         </div>
     )
 
 }
 
-export default useLocation
+export default useLocation1
