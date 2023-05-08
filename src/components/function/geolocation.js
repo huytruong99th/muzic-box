@@ -14,10 +14,17 @@ function useLocation() {
             });
         }
     };
+
+    const calculateDistance = () => {
+        console.log('dog')
+    }
     
     return (
         <div>
-            <h1 onClick={locate}>
+            <h1 onClick={event => {
+                            locate();
+                            calculateDistance();
+                        }}>
                 Toạ độ là {location}
             </h1>
         </div>
