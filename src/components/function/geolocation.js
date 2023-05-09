@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
 
-function useLocation1() {
-    const [location1, setLocation1] = useState();
+function Location() {
+    const [location, setLocation] = useState();
 
     const locate = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
-                setLocation1(
-                    {
-                    lat: position.coords.latitude,
-                    long: position.coords.longitude
-                    });
+                setLocation(
+                    [
+                    position.coords.latitude, position.coords.longitude
+                    ]);
             });
         }
     }
@@ -21,15 +20,14 @@ function useLocation1() {
     
     return (
         <div className='ok'>
-            <h1 onClick={ () => {
-                            locate();
-                            calculateDistance();
-                        }}>
-                Toạ độ là {location1}
+            <h1 onClick={ 
+                            locate
+                        }>
+                Toạ độ là {location}
             </h1>
         </div>
     )
 
 }
 
-export default useLocation1
+export default Location
