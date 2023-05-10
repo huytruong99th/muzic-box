@@ -18,7 +18,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 85vw;
+    min-width: none;
+    max-width: 1400px;
     gap: 20px;
     margin: 0 auto;
     flex-wrap: wrap;
@@ -27,7 +28,7 @@
 
 .singleImage {
     cursor: pointer;
-    width: 15vw;
+    width: 300px;
     
 }
 

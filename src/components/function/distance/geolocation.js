@@ -7,10 +7,10 @@ function Location() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 setLocation(
-                    [
-                    position.coords.latitude, position.coords.longitude
-                    ]);
+                    [position.coords.latitude, position.coords.longitude]);
             });
+        } else {
+            setLocation(['aaaa','bbbb'])
         }
     }
 
@@ -20,6 +20,7 @@ function Location() {
     
     return (
         <div className='ok'>
+            {location}
             <h1 onClick={ 
                             locate
                         }>

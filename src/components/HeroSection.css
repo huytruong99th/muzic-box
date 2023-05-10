@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.6);
     object-fit: contain;
 }
 
@@ -41,6 +41,48 @@
     justify-content: center;
   }
   
+  .cards__location__container {
+    max-height: 100%;
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    border-radius: 10px;
+    padding: 50px;
+    animation-name: sliderAppear;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+
+  }
+
+  .location__container-layer {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    animation-name: sliderAppear;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+  }
+
+  .location__container {
+    z-index: 998;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
   @media screen and (max-width: 960px) {
     .hero-container > h1 {
       font-size: 70px;
@@ -90,3 +132,69 @@
       margin: 10px 30px;
     }
   }
+
+
+.cards__item__list {
+    display: flex;
+    margin: 1rem 1rem;
+    border-radius: 10px;
+    width: 50vw;
+    min-width: 500px;
+    max-width: 1400px;
+    justify-content: space-between;
+
+}
+
+.cards__item__list__info {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.cards__item__list__text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+}
+
+.cards__item__list__distance {
+    display: flex;
+    fill: #fff;
+}
+
+.cards__item__list__distance svg {
+  margin-left: 15px;
+}
+
+.cards__item__list__action {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.cards__item__list__action a {
+  padding: 5px;
+}
+
+i {
+  color: white;
+  opacity: 0.5;
+}
+
+.btnClose-1 {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+}
+
+.btnClose-1:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+@keyframes sliderAppear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

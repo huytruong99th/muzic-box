@@ -80,6 +80,7 @@ function DatePicker() {
                         value='MuzicBox 237 Xã Đàn'
                         label='Đống Đa'
                         onClick={handleStoreClick}
+                        renderType={true}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
@@ -87,6 +88,7 @@ function DatePicker() {
                         value='MuzicBox 111 Xã Đàn'
                         label='Đống Đa'
                         onClick={handleStoreClick}
+                        renderType={true}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
@@ -94,6 +96,7 @@ function DatePicker() {
                         value='MuzicBox 345 Hoàng Mai'
                         label='Hoàng Mai'
                         onClick={handleStoreClick}
+                        renderType={true}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
@@ -101,6 +104,7 @@ function DatePicker() {
                         value='MuzicBox 23 Đường Láng'
                         label='Đống Đa'
                         onClick={handleStoreClick}
+                        renderType={true}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
@@ -108,6 +112,7 @@ function DatePicker() {
                         value='MuzicBox 44 Nguyễn Chí Thanh'
                         label='Đống Đa'
                         onClick={handleStoreClick}
+                        renderType={true}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
@@ -115,6 +120,7 @@ function DatePicker() {
                         value='MuzicBox 88 Xuân Thuỷ'
                         label='Đống Đa'
                         onClick={handleStoreClick}
+                        renderType={true}
                     />
                     <CardItem 
                         src="/images/cardbackground.png"
@@ -122,6 +128,7 @@ function DatePicker() {
                         value='MuzicBox 66 Trần Khát Chân'
                         label='Hai Bà Trưng'
                         onClick={handleStoreClick}
+                        renderType={true}
                     />
                 </div>
             </div>

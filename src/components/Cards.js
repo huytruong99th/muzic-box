@@ -14,8 +14,8 @@ function Cards() {
                 label='Đống Đa'
                 path='/dat-phong'
                 onClick={() => {return}}
-                latitude=''
-                longitude=''
+                distance={`${2+3} km`}
+                renderType='true'
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -23,6 +23,7 @@ function Cards() {
                 label='Đống Đa'
                 path='/coso/1027-lang'
                 onClick={() => {return}}
+                renderType='true'
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -30,6 +31,7 @@ function Cards() {
                 label='Cầu Giấy'
                 path='/coso/36-ho-tung-mau'
                 onClick={() => {return}}
+                renderType='true'
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -37,6 +39,7 @@ function Cards() {
                 label='Hai Bà Trưng'
                 path='/coso/147-tran-khat-chan'
                 onClick={() => {return}}
+                renderType='true'
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -44,6 +47,7 @@ function Cards() {
                 label='Đống Đa'
                 path='/coso/237-xa-dan'
                 onClick={() => {return}}
+                renderType='true'
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -51,6 +55,7 @@ function Cards() {
                 label='Đống Đa'
                 path='/coso/1027-lang'
                 onClick={() => {return}}
+                renderType='true'
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -58,6 +63,7 @@ function Cards() {
                 label='Cầu Giấy'
                 path='/coso/36-ho-tung-mau'
                 onClick={() => {return}}
+                renderType='true'
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -65,6 +71,7 @@ function Cards() {
                 label='Hai Bà Trưng'
                 path='/coso/147-tran-khat-chan'
                 onClick={() => {return}}
+                renderType='true'
               />
             </ul>
           </div>

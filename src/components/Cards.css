@@ -72,6 +72,23 @@ h1 {
     box-sizing: border-box;
     border-radius: 2px;
   }
+
+.cards__item__distance__layer {
+    display: flex;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    padding: 16px 12px
+}
+
+.cards__item__distance__layer svg {
+    fill: white;
+}
+
+.cards__item__distance__layer p {
+    color: white;
+}
   
 .cards__item__img {
     position: absolute;
