@@ -17,6 +17,18 @@ function HeroSection() {
         setOpenModal(!openModal);
     };
 
+    const [locationPermission, setLocationPermission] = useState(false)
+    const asklocation = () => {
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(() => {
+            setLocationPermission(true)
+        });
+        } else {
+            setLocationPermission(false)
+        }
+        };
+
+    
 
   return (
     <div className='hero-container'>
@@ -29,13 +41,14 @@ function HeroSection() {
                 </Button>
             </div>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={handleOpenModal}>
+                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleCloseModal(); setTimeout(asklocation, 1000)}}>
                     TÌM CƠ SỞ GẦN NHẤT
                 </Button>
             </div>
         </div>
         { openModal ? <div className='location__container'>
             <div className='cards__location__container'>
+                <h5 className='request__description'>Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5>
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
