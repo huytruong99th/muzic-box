@@ -13,20 +13,8 @@ function CardItem(props) {
         
         };
 
-    const [locationPermission, setLocationPermission] = useState(false)
     const renderType = props.renderType;
-    const asklocation = () => {
-        if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(() => {
-            setLocationPermission(true)
-        });
-        } else {
-            setLocationPermission(false)
-        }
-        };
-
-    setTimeout(asklocation, 3000)
-
+    const locationPermission = props.locationPermission
 
   return (
         renderType ? <li className='cards__item' onClick={handleClick} value={props.value}>

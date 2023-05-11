@@ -1,8 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CardItem from './CardItem';
 import './Cards.css';
 
 function Cards() {
+
+    const [locationPermission, setLocationPermission] = useState(false)
+    const [userLocation, setUserLocation] = useState();
+
+    const checkPermission = () => {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+        if (result.state === "granted") {
+          setLocationPermission(true);
+        } else {
+          setLocationPermission(false);
+        }
+      })
+    }
+
+    setInterval(checkPermission, 3000);
+
   return (
     <div className='cards'>
         <div className='cards__container'>
@@ -16,6 +32,7 @@ function Cards() {
                 onClick={() => {return}}
                 distance={`${2+3} km`}
                 renderType='true'
+                locationPermission={locationPermission}
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -24,6 +41,7 @@ function Cards() {
                 path='/coso/1027-lang'
                 onClick={() => {return}}
                 renderType='true'
+                locationPermission={locationPermission}
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -32,6 +50,7 @@ function Cards() {
                 path='/coso/36-ho-tung-mau'
                 onClick={() => {return}}
                 renderType='true'
+                locationPermission={locationPermission}
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -40,6 +59,7 @@ function Cards() {
                 path='/coso/147-tran-khat-chan'
                 onClick={() => {return}}
                 renderType='true'
+                locationPermission={locationPermission}
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -48,6 +68,7 @@ function Cards() {
                 path='/coso/237-xa-dan'
                 onClick={() => {return}}
                 renderType='true'
+                locationPermission={locationPermission}
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -56,6 +77,7 @@ function Cards() {
                 path='/coso/1027-lang'
                 onClick={() => {return}}
                 renderType='true'
+                locationPermission={locationPermission}
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -64,6 +86,7 @@ function Cards() {
                 path='/coso/36-ho-tung-mau'
                 onClick={() => {return}}
                 renderType='true'
+                locationPermission={locationPermission}
               />
               <CardItem 
                 src="/images/cardbackground.png"
@@ -72,6 +95,7 @@ function Cards() {
                 path='/coso/147-tran-khat-chan'
                 onClick={() => {return}}
                 renderType='true'
+                locationPermission={locationPermission}
               />
             </ul>
           </div>

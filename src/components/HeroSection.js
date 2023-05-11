@@ -3,31 +3,28 @@ import { Button } from './Button';
 import CardItem from './CardItem';
 import './HeroSection.css';
 import '../App.css'
-import { askLocation } from './function/distance/calculatedistance';
 
 function HeroSection() {
 
     const [openModal, setOpenModal] = useState(false);
-
     const handleOpenModal = () => {
         setOpenModal(!openModal);
     };
-
     const handleCloseModal = () => {
         setOpenModal(!openModal);
     };
-
     const [locationPermission, setLocationPermission] = useState(false)
-    const asklocation = () => {
-        if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(() => {
-            setLocationPermission(true)
+    
+    function getPosition() {
+        return new Promise((res, rej) => {
+            navigator.geolocation.getCurrentPosition(res, rej);
         });
-        } else {
-            setLocationPermission(false)
-        }
-        };
-
+    }
+    
+    async function main() {
+        var position = await getPosition();
+        console.log(position);
+    }
     
 
   return (
@@ -41,7 +38,7 @@ function HeroSection() {
                 </Button>
             </div>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleCloseModal(); setTimeout(asklocation, 1000)}}>
+                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleCloseModal(); setTimeout(main, 2000)}}>
                     TÌM CƠ SỞ GẦN NHẤT
                 </Button>
             </div>
