@@ -89,6 +89,22 @@ h1 {
 .cards__item__distance__layer p {
     color: white;
 }
+
+.cards__item__list__distance {
+    display: flex;
+    align-items: center;
+}
+
+.cards__item__list__text {
+    margin-right: 15px;
+
+}
+
+.cards__item__list__distance p {
+    color: white;
+    font-size: 1.25rem;
+    margin-left: 10px;
+}
   
 .cards__item__img {
     position: absolute;

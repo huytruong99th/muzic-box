@@ -136,7 +136,7 @@
 
 .cards__item__list {
     display: flex;
-    margin: 1rem 1rem;
+    margin: 0.5rem 0.5rem;
     border-radius: 10px;
     width: 50vw;
     min-width: 500px;

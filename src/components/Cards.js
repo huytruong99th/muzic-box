@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import CardItem from './CardItem';
 import './Cards.css';
+import { storeList } from './data/store';
 
 function Cards() {
 
@@ -24,7 +25,22 @@ function Cards() {
         <div className='cards__container'>
           <div className='cards__wrapper'>
             <ul className='cards__items'>
-              <CardItem 
+              {storeList.map((item) => (
+                <CardItem 
+                  key={item.id}
+                  src={item.src}
+                  text={item.text}
+                  label={item.label}
+                  path={item.path}
+                  distance={item.distance}
+                  location={item.location}
+
+                  locationPermission={locationPermission}
+                  renderType={true}
+                  onClick={() => {return}}
+                />
+              ))}
+              {/*<CardItem 
                 src="/images/cardbackground.png"
                 text='MuzicBox 237 Xã Đàn'
                 label='Đống Đa'
@@ -96,7 +112,7 @@ function Cards() {
                 onClick={() => {return}}
                 renderType='true'
                 locationPermission={locationPermission}
-              />
+              />*/}
             </ul>
           </div>
         </div>

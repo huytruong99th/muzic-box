@@ -5,6 +5,7 @@ import './DatePicker.css';
 import CardItem from './CardItem';
 import { add, format, setDefaultOptions } from "date-fns";
 import { vi } from 'date-fns/locale'
+import { storeList } from './data/store';
 
 
 function DatePicker() {
@@ -66,6 +67,20 @@ function DatePicker() {
 
     }
 
+    const [locationPermission, setLocationPermission] = useState(false)
+
+    const checkPermission = () => {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+        if (result.state === "granted") {
+          setLocationPermission(true);
+        } else {
+          setLocationPermission(false);
+        }
+      })
+    }
+
+    setInterval(checkPermission, 3000);
+
 
   return (
     <>  <div className='booking-container'>
@@ -73,8 +88,23 @@ function DatePicker() {
                 <div>
                     <h3>CHỌN CƠ SỞ ĐẶT PHÒNG</h3>
                 </div>
-                <div className="place-wrapper">                
-                    <CardItem
+                <div className="place-wrapper">
+                {storeList.map((item) => (
+                    <CardItem 
+                        key={item.id}
+                        src={item.src}
+                        text={item.text}
+                        label={item.label}
+                        path={item.path}
+                        distance={item.distance}
+                        location={item.location}
+
+                        locationPermission={locationPermission}
+                        renderType={true}
+                        onClick={handleStoreClick}
+                        />
+                    ))}               
+{                    /*<CardItem
                         src="/images/cardbackground.png"
                         text='MuzicBox 237 Xã Đàn'
                         value='MuzicBox 237 Xã Đàn'
@@ -129,7 +159,7 @@ function DatePicker() {
                         label='Hai Bà Trưng'
                         onClick={handleStoreClick}
                         renderType={true}
-                    />
+                    />*/}
                 </div>
             </div>
 
