@@ -5,7 +5,13 @@ import './HeroSection.css';
 import '../App.css'
 import { storeList, calDistance } from './data/store';
 
+export const user = {
+    lat: null,
+    long: null
+}
+
 function HeroSection() {
+    const [getData, setGetdata] = useState(false);
 
     const [openModal, setOpenModal] = useState(false);
     const handleOpenModal = () => {
@@ -14,7 +20,6 @@ function HeroSection() {
     const handleCloseModal = () => {
         setOpenModal(!openModal);
     };
-    const [locationPermission, setLocationPermission] = useState(false)
     
     function getPosition() {
         return new Promise((res, rej) => {
@@ -23,23 +28,23 @@ function HeroSection() {
     }
     
     async function main() {
-        var position = await getPosition();
+        var position = await getPosition()
+        user.lat = position.coords.latitude;
+        user.long = position.coords.longitude;
         console.log(position);
     }
 
-    const checkPermission = () => {
-        navigator.permissions.query({ name: "geolocation" }).then((result) => {
-          if (result.state === "granted") {
-            setLocationPermission(true);
-          } else {
-            setLocationPermission(false);
-          }
-        })
-      }
-  
-      setInterval(checkPermission, 3000);
-  
-    
+    async function waitData() {
+        await main();
+        calDistance();
+    }
+
+    async function displayData() {
+        await waitData();
+        setGetdata(true);
+    }
+
+      
 
   return (
     <div className='hero-container'>
@@ -52,7 +57,7 @@ function HeroSection() {
                 </Button>
             </div>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleCloseModal(); setTimeout(main, 2000); calDistance()}}>
+                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); main(); waitData(); displayData(); }}>
                     TÌM CƠ SỞ GẦN NHẤT
                 </Button>
             </div>
@@ -63,7 +68,7 @@ function HeroSection() {
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
-                {storeList.map((item) => (
+               { getData ? storeList.map((item) => (
                     <CardItem 
                         key={item.id}
                         src={item.src}
@@ -72,11 +77,9 @@ function HeroSection() {
                         path={item.path}
                         distance={item.distance}
                         location={item.location}
-
-                        locationPermission={locationPermission}
                         renderType={false}
                         />
-                    ))}
+                    )) : <></>}
                 {/*<CardItem 
                     text='MuzicBox 237 Xã Đàn'
                 />
