@@ -4,6 +4,22 @@ import './Cards.css';
 import { storeList } from './data/store';
 
 function Cards() {
+
+    const [locationPermission, setLocationPermission] = useState(false)
+    const [userLocation, setUserLocation] = useState();
+
+    const checkPermission = () => {
+      navigator.permissions.query({ name: "geolocation" }).then((result) => {
+        if (result.state === "granted") {
+          setLocationPermission(true);
+        } else {
+          setLocationPermission(false);
+        }
+      })
+    }
+
+    setInterval(checkPermission, 3000);
+
   return (
     <div className='cards'>
         <div className='cards__container'>
@@ -18,6 +34,8 @@ function Cards() {
                   path={item.path}
                   distance={item.distance}
                   location={item.location}
+
+                  locationPermission={locationPermission}
                   renderType={true}
                   onClick={() => {return}}
                 />
