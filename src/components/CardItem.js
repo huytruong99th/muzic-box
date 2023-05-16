@@ -61,7 +61,7 @@ function CardItem(props) {
                         </div>
                 </div>
                 <div className='cards__item__list__action'>
-                    <Button buttonStyle='btn--primary' buttonSize='btn--small' className='first-btn'>ĐẶT PHÒNG</Button>
+                    <Button buttonStyle='btn--primary' buttonSize='btn--small' className='first-btn' path={props.path}>ĐẶT PHÒNG</Button>
                     <Button buttonStyle='btn--outline' buttonSize='btn--small'>CHỈ ĐƯỜNG</Button>
                 </div>
         </li>
