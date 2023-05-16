@@ -22,8 +22,13 @@ function HeroSection() {
     };
     
     function getPosition() {
+        const option = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0,
+        }
         return new Promise((res, rej) => {
-            navigator.geolocation.getCurrentPosition(res, rej);
+            navigator.geolocation.getCurrentPosition(res, rej, option);
         });
     }
     
