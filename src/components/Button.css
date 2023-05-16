@@ -9,6 +9,14 @@
     border: none;
     cursor: pointer;
   }
+
+.btn--secondary {
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 25px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+  }
   
 .btn--primary {
     background-color: var(--primary);
@@ -23,15 +31,23 @@
     border: 1px solid var(--primary);
     transition: all 0.3s ease-out;
   }
+
+.btn--small {
+    padding: 6px 16px;
+    font-size: 16px;
+    font-weight: 500;
+  }
   
 .btn--medium {
     padding: 8px 20px;
     font-size: 18px;
+    font-weight: 500;
   }
   
 .btn--large {
     padding: 12px 26px;
     font-size: 20px;
+    font-weight: 500;
   }
   
 .btn--large:hover,
@@ -41,3 +57,12 @@
     color: #242424;
     transition: 250ms;
   }
+
+.btn--secondary:hover {
+    font-weight: 700;
+    transition: all 0.3s ease-out;
+    background: #ffdc73;
+    color: #242424;
+    border: 1px solid #242424;
+    transition: 250ms;
+}

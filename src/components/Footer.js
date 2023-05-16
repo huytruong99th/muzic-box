@@ -7,9 +7,10 @@ function Footer() {
     <div className='footer'>
         <div className='footer-container'>
             <div className='footer-about'>
-                        <h2>VỀ KARAOKE MUZICBOX</h2>
+                <h2>VỀ KARAOKE MUZICBOX</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae nunc a erat laoreet facilisis at vitae mi. Suspendisse fermentum massa vel massa rhoncus finibus. Cras malesuada velit non suscipit lobortis. Phasellus id maximus metus. Maecenas nec placerat orci, eget molestie erat. </p>
             </div>
-            <div className='location-list'>
+            <div className='footer-location'>
                 <h2>HỆ THỐNG KARAOKE MUZICBOX</h2>
                 <div className='location-item'>
                     <h3><li>MUZICBOX Ô CHỢ DỪA</li></h3>
@@ -32,7 +33,7 @@ function Footer() {
                     <p>Địa chỉ: 207 TRÀN KHÁT CHÂN, Q. Hai Bà Trưng, Hà Nội<br/>SĐT: 024 666 444</p>
                 </div>
             </div>
-            <div className='location-map'>
+            <div className='footer-map'>
                 <h2>BẢN ĐỒ</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3188085547763!2d105.82517035116908!3d21.019925985934446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab783f088fd3%3A0x2a9f6ae076676627!2zMTI3LTE2MSBQLiDDlCBDaOG7oyBE4burYSwgQ2jhu6MgROG7q2EsIMSQ4buRbmcgxJBhLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1681274884713!5m2!1svi!2s" width="450" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>

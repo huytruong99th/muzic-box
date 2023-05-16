@@ -36,15 +36,17 @@ function HeroSection() {
 
     async function waitData() {
         await main();
-        calDistance();
+        if (storeList[0].distance === null) {
+            setTimeout(calDistance(), 2000);
+        } else {
+            return
+        }
     }
 
     async function displayData() {
         await waitData();
-        setGetdata(true);
+        setTimeout(() => {setGetdata(true)}, 2000);
     }
-
-      
 
   return (
     <div className='hero-container'>

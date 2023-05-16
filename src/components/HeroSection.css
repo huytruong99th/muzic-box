@@ -12,7 +12,7 @@
 .hero-container > h1 {
     color: #fff;
     font-size: 4rem;
-    margin-top: 100px;
+    margin-top: 0px;
     text-align: center;
   }
   
@@ -40,7 +40,15 @@
     display: flex;
     justify-content: center;
   }
-  
+
+  .location__container {
+    z-index: 998;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
   .cards__location__container {
     max-height: 100%;
     max-width: 100%;
@@ -59,7 +67,7 @@
     animation-name: sliderAppear;
     animation-duration: 0.25s;
     animation-timing-function: ease-in;
-
+    box-shadow: 0 0px 25px rgba(255, 228, 78, 0.2);
   }
 
   .location__container-layer {
@@ -75,13 +83,31 @@
     animation-timing-function: ease-in;
   }
 
-  .location__container {
-    z-index: 998;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-  }
+  .request__description {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    max-width: 50%;
+    margin-bottom: 15px;
+}
+
+i {
+  color: white;
+  opacity: 0.5;
+}
+
+.btnClose-1 {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+}
+
+.btnClose-1:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
 
   @media screen and (max-width: 960px) {
     .hero-container > h1 {
@@ -97,6 +123,53 @@
 
     .hero-btns {
       margin: 10px 30px;
+    }
+
+    .cards__location__container {
+    }
+
+    .request__description {
+      font-size: 1.125rem;
+      font-weight: 500;
+      max-width: 100%;
+      margin: 1.5rem 3rem 1rem 3rem;
+    }
+
+    .location__container {
+      z-index: 998;
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .cards__location__container {
+      padding: 15rem 0 1.5rem 0;
+      max-height: 90%;
+      max-width: 95%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      border-radius: 10px;
+      animation-name: sliderAppear;
+      animation-duration: 0.25s;
+      animation-timing-function: ease-in;
+      overflow: scroll;
+    }
+
+    
+    .btnClose-1 {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 1.5rem;
     }
     
   }
@@ -134,75 +207,6 @@
   }
 
 
-.cards__item__list {
-    display: flex;
-    margin: 0.5rem 0.5rem;
-    border-radius: 10px;
-    width: 50vw;
-    min-width: 500px;
-    max-width: 1400px;
-    justify-content: space-between;
-
-}
-
-.cards__item__list__info {
-    display: flex;
-    align-items: center;
-    margin-right: 50px;
-}
-
-.cards__item__list__text {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: white;
-    text-align: center;
-}
-
-.request__description {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: white;
-    text-align: center;
-    max-width: 50%;
-    margin-bottom: 15px;
-}
-
-
-.cards__item__list__distance {
-    display: flex;
-    fill: #fff;
-}
-
-.cards__item__list__distance svg {
-  margin-left: 15px;
-}
-
-.cards__item__list__action {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.cards__item__list__action a {
-  padding: 5px;
-}
-
-i {
-  color: white;
-  opacity: 0.5;
-}
-
-.btnClose-1 {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 2rem;
-}
-
-.btnClose-1:hover {
-  opacity: 1;
-  transition: opacity 0.2s ease-in;
-}
 
 @keyframes sliderAppear {
   from {opacity: 0;}

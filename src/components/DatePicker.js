@@ -64,7 +64,6 @@ function DatePicker() {
         });
         Back();
         console.log(store.Store)
-
     }
 
     const [locationPermission, setLocationPermission] = useState(false)
@@ -104,7 +103,7 @@ function DatePicker() {
                         onClick={handleStoreClick}
                         />
                     ))}               
-{                    /*<CardItem
+                    {/*<CardItem
                         src="/images/cardbackground.png"
                         text='MuzicBox 237 Xã Đàn'
                         value='MuzicBox 237 Xã Đàn'
@@ -168,12 +167,12 @@ function DatePicker() {
                     <h3>CHỌN THỜI GIAN ĐẶT PHÒNG</h3>
                 </div>
 
-                {store.Store ? 
-                <div>
+                { store.Store ? 
+                <div className='date-picker-wrapper'>
                     {date.justDate ? 
                     <div className='mt-4'>
                         <div className='mb-5'>
-                            <button className='rounded-lg bg-gray-100 p-2 text-blue-900 font-semibold' onClick={Back}>← QUAY LẠI</button>
+                            <button className='rounded-lg bg-gray-100 p-2 font-semibold back-btn' onClick={Back}>← QUAY LẠI</button>
                         </div>
                         <div className ='flex gap-4 flex-wrap'>
                             {
@@ -186,7 +185,7 @@ function DatePicker() {
                             ))
                             }
                         </div>
-                        {date.dateTime?
+                        {date.dateTime ?
                         <div>
                             <div className="booking-info">
                                 <p className='font-bold'>Thông tin đặt phòng của bạn:</p>
@@ -235,7 +234,6 @@ function DatePicker() {
                     onClickDay={(date) => setDate((prev) => ({...prev, justDate: date}))}
                     />
                     }
-
 
                 </div>
                 :

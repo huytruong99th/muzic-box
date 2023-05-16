@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
@@ -6,7 +6,7 @@ function CardItem(props) {
     const [locationPermission, setLocationPermission] = useState(false)
 
     const handleClick = () => {
-        const newStore = props.value;
+        const newStore = props.text;
         if (props.onClick() === undefined) {
             window.scrollTo(0, 0);
         }
@@ -28,7 +28,7 @@ function CardItem(props) {
     setInterval(checkPermission, 500);
 
   return (
-        renderType ? <li className='cards__item' onClick={handleClick} value={props.value}>
+        renderType ? <li className='cards__item' onClick={handleClick} value={props.text}>
             <Link className='cards__item__link' to={props.path}>
                 <figure className='cards__item__pic-wrap' data-category={props.label}>
                     { locationPermission && props.distance !== null ? 
@@ -61,8 +61,8 @@ function CardItem(props) {
                         </div>
                 </div>
                 <div className='cards__item__list__action'>
-                    <Button buttonStyle='btn--outline' className='first-btn'>ĐẶT PHÒNG</Button>
-                    <Button buttonStyle='btn--outline'>CHỈ ĐƯỜNG</Button>
+                    <Button buttonStyle='btn--primary' buttonSize='btn--small' className='first-btn'>ĐẶT PHÒNG</Button>
+                    <Button buttonStyle='btn--outline' buttonSize='btn--small'>CHỈ ĐƯỜNG</Button>
                 </div>
         </li>
   );

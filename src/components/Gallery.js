@@ -67,7 +67,7 @@ function Gallery() {
 
   return (
     <div className='gallery'>
-        <h1>HÌNH ẢNH TẠI HỆ THỐNG KARAOKE MUZICBOX</h1>
+        <h1>TRẢI NGHIỆM DỊCH VỤ TẠI KARAOKE MUZICBOX</h1>
         {openModal &&
             <div className='sliderParent'>
                 <div className='sliderWrapper'>

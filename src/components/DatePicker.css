@@ -10,6 +10,10 @@
     margin-bottom: 1rem;
 }
 
+.back-btn {
+  color: #d6a100
+}
+
 .place-container {
   justify-content: flex-end;
   width: 60%;
@@ -53,7 +57,7 @@
 
 .booking-info p, label {
   font-size: 1.25rem;
-  color: rgb(30 58 138);
+  color: #242424;
 }
 
 .react-calendar {
@@ -92,10 +96,6 @@
   
   /* Custom Navigation Styles */
   @media screen and (max-width: 500px) {
-    .react-calendar__navigation__prev2-button,
-    .react-calendar__navigation__prev-button {
-      display: none;
-    }
     .react-calendar__navigation__label {
       padding-left: 1rem;
       text-align: left;
@@ -128,7 +128,7 @@
     background-color: #e6e6e6;
   }
   .react-calendar__month-view__weekdays {
-    color: #4f46e5;
+    color: #d6a100;
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
@@ -197,8 +197,10 @@
   }
   .react-calendar__tile--now {
     border-radius: 10px;
-    border: 2px solid #4f46e5 !important;
-    color: #4f46e5;
+    border: 2px solid #d6a100 !important;
+    color: #d6a100;
+    font-size: 20px;
+    font-weight: 600;
   }
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {
@@ -238,7 +240,7 @@ input[type=text], input[type=tel], input[type=email] {
 
 input[type=submit] {
   width: 100%;
-  background-color: #4f46e5;
+  background-color: #242424;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -253,4 +255,55 @@ input[type=submit]:hover {
   color: #000;
   font-weight: 700;
   transition: 0.1ss linear;
+}
+
+@media screen and (max-width: 960px) {
+  .react-calendar {
+    width: 400px;
+  }
+
+  .booking-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 400px;
+  }
+
+  .place-container {
+    min-width: 400px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .place-wrapper .cards__item {
+    display: flex;
+    flex-grow: 1;
+    margin: 1em 0.5rem;
+    border-radius: 10px;
+    min-width: 100px;
+    max-width: 200px;
+  }
+
+  .date-picker-container {
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 400px;
+    padding: 0 20px;
+  }
+
+  .date-picker-wrapper1 {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+    box-shadow: ;
+
+  }
 }

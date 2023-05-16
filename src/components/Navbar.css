@@ -19,7 +19,6 @@
   }
   
   .navbar-logo {
-    color: #fff;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -27,6 +26,13 @@
     font-size: 2rem;
     display: flex;
     align-items: center;
+  }
+
+  .navbar-logo span{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffdc73;
+    padding-right: 8px;
   }
   
   .fa-typo3 {
@@ -59,11 +65,13 @@
   }
   
   .logo-main, .svg-i {
-    fill: white;
+    fill: #ffdc73;
   }
 
   .nav-links:hover {
-    border-bottom: 4px solid #fff;
+    border-bottom: 4px solid #ffdc73;
+    color: #ffdc73;
+    font-weight: 500;
     transition: all 0.2s ease-out;
   }
   
@@ -122,6 +130,13 @@
       left: 0;
       transform: translate(0%, 25%);
       font-size: 1rem;
+    }
+
+    .navbar-logo span{
+      font-size: 1rem;
+      font-weight: 500;
+      color: #ffdc73;
+      padding-right: 8px;
     }
   
     .menu-icon {
