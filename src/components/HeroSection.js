@@ -22,47 +22,30 @@ function HeroSection() {
     };
     
     function getPosition() {
-        return new Promise((res, rej) => {
-            const option = {
-                enableHighAccuracy: true,
+        return new Promise((resolve, reject) => {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(resolve, reject, {
                 timeout: 5000,
-                maximumAge: 0,
-            };
-            navigator.geolocation.getCurrentPosition(res, rej, option);
-        });
+                maximumAge: 2000,
+                enableHighAccuracy: true,
+              });
+            } else {
+              reject(new Error('Browser does not support geolocation!'));
+            }
+          });
     }
     
     async function main() {
         var position = await getPosition()
         user.lat = position.coords.latitude;
         user.long = position.coords.longitude;
-
-        const options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0,
-          };
-          
-        function success(pos) {
-            const crd = pos.coords;
-            user.lat = crd.latitude;
-            user.long = crd.longitude;
-            console.log(crd);
-          }
-          
-        function error(err) {
-            console.warn(`ERROR(${err.code}): ${err.message}`);
-          }
-        navigator.geolocation.getCurrentPosition(success, error, options);
-
         console.log(position);
-
     }
 
     async function waitData() {
         await main();
         if (storeList[0].distance === null) {
-            setTimeout(calDistance(), 1000);
+            setTimeout(calDistance(), 2000);
         } else {
             return
         }
@@ -84,7 +67,7 @@ function HeroSection() {
                 </Button>
             </div>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); displayData(); }}>
+                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); main(); waitData(); displayData(); }}>
                     TÌM CƠ SỞ GẦN NHẤT
                 </Button>
             </div>
