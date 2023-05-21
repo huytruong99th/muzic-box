@@ -55,7 +55,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: fixed;
     top: 50%;
@@ -63,16 +63,15 @@
     transform: translate(-50%, -50%);
     z-index: 999;
     border-radius: 10px;
-    padding: 50px;
+    padding: 30px;
     animation-name: sliderAppear;
     animation-duration: 0.25s;
     animation-timing-function: ease-in;
     box-shadow: 0 0px 25px rgba(255, 228, 78, 0.2);
+    overflow: auto;
   }
 
   .location__container-layer {
-    position: fixed;
-    top: 0px;
     width: 100%;
     height: 100%;
     z-index: 998;
@@ -129,7 +128,7 @@ i {
       font-size: 1.125rem;
       font-weight: 500;
       max-width: 100%;
-      margin: 1.5rem 3rem 1rem 3rem;
+      margin: 1rem 3rem 1rem 3rem;
     }
 
     .location__container {
@@ -141,13 +140,13 @@ i {
     }
   
     .cards__location__container {
-      padding: 15rem 0 1.5rem 0;
+      padding: 1.5rem 0 1.5rem 0;
       max-height: 90%;
       max-width: 95%;
       background-color: rgba(0, 0, 0, 0.9);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       position: fixed;
       top: 50%;

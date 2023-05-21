@@ -140,9 +140,9 @@ h1 {
 
 .cards__item__list {
     display: flex;
-    margin: 0.5rem 0.5rem;
+    margin: 0.25rem 0.25rem;
     border-radius: 10px;
-    width: 50vw;
+    width: 60vw;
     min-width: 500px;
     max-width: 1400px;
     justify-content: space-between;

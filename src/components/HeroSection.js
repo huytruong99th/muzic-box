@@ -22,13 +22,18 @@ function HeroSection() {
     };
     
     function getPosition() {
-        const option = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0,
-        }
         return new Promise((res, rej) => {
-            navigator.geolocation.getCurrentPosition(res, rej, option);
+            const option = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0,
+            };
+
+            function error(err) {
+                console.log(`ERROR(${err.code}): ${err.message}`);
+              };
+
+            navigator.geolocation.getCurrentPosition(res, error, option);
         });
     }
     
