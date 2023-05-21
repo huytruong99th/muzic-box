@@ -91,7 +91,7 @@ const API = 'Anwq3ixnWe6DKcD1BjeUXZrSrhR4v1676Q1Tngq3SFkAQbBpz_17Jw_4RAvqGwlM';
 
 function calDistance() {
     navigator.permissions.query({ name: "geolocation" }).then((result) => {
-        if (result.state === "granted") {
+        if (result.state === "granted") { 
             for (let i = 0 ; i < storeList.length ; i++) {
                 const des = {
                     lat: null,
