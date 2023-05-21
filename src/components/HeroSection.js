@@ -28,12 +28,7 @@ function HeroSection() {
                 timeout: 5000,
                 maximumAge: 0,
             };
-
-            function error(err) {
-                console.log(`ERROR(${err.code}): ${err.message}`);
-              };
-
-            navigator.geolocation.getCurrentPosition(res, error, option);
+            navigator.geolocation.getCurrentPosition(res, rej, option);
         });
     }
     
@@ -41,13 +36,33 @@ function HeroSection() {
         var position = await getPosition()
         user.lat = position.coords.latitude;
         user.long = position.coords.longitude;
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0,
+          };
+          
+        function success(pos) {
+            const crd = pos.coords;
+            user.lat = crd.latitude;
+            user.long = crd.longitude;
+            console.log(crd);
+          }
+          
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+          }
+        navigator.geolocation.getCurrentPosition(success, error, options);
+
         console.log(position);
+
     }
 
     async function waitData() {
         await main();
         if (storeList[0].distance === null) {
-            setTimeout(calDistance(), 2000);
+            setTimeout(calDistance(), 1000);
         } else {
             return
         }
@@ -69,7 +84,7 @@ function HeroSection() {
                 </Button>
             </div>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); main(); waitData(); displayData(); }}>
+                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); displayData(); }}>
                     TÌM CƠ SỞ GẦN NHẤT
                 </Button>
             </div>
