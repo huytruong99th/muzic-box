@@ -60,7 +60,7 @@ function Navbar() {
                   </li>
               
                 </ul>
-                {button && <Button buttonStyle='btn--secondary' onClick={() => window.scrollTo(0, 0)} path='/dat-phong'>ĐẶT PHÒNG</Button>}
+                {button && <Button buttonStyle='btn--primary' onClick={() => window.scrollTo(0, 0)} path='/dat-phong'>ĐẶT PHÒNG</Button>}
             </div>
         </nav>
     </>

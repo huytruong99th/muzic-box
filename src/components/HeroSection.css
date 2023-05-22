@@ -1,94 +1,94 @@
 .hero-container {
-    background: url(../../public/images/singing.jpg) center center/cover no-repeat;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.6);
-    object-fit: contain;
+  background: url(../../public/images/singing.jpg) center center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: inset 0 0 0 3840px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
 }
 
 .hero-container > h1 {
-    color: #fff;
-    font-size: 4rem;
-    margin-top: 0px;
-    text-align: center;
-  }
-  
-  .hero-container > p {
-    margin-top: 8px;
-    color: #fff;
-    font-size: 2rem;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-  }
-  
-  .hero-btns {
-    margin: 32px 5px 0 5px;
-  }
-  
-  .hero-btns .btn {
-    margin: 6px;
-  }
-  
-  .fa-play-circle {
-    margin-left: 4px;
-  }
+  color: #fff;
+  font-size: 4rem;
+  margin-top: 0px;
+  text-align: center;
+}
 
-  .btn-container {
-    display: flex;
-    justify-content: center;
-  }
+.hero-container > p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
 
-  .location__container {
-    z-index: 998;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-  }
+.hero-btns {
+  margin: 32px 5px 0 5px;
+}
 
-  .cards__location__container {
-    max-height: 100%;
-    max-width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    border-radius: 10px;
-    padding: 50px;
-    animation-name: sliderAppear;
-    animation-duration: 0.25s;
-    animation-timing-function: ease-in;
-    box-shadow: 0 0px 25px rgba(255, 228, 78, 0.2);
-    overflow: auto;
-  }
+.hero-btns .btn {
+  margin: 6px;
+}
 
-  .location__container-layer {
-    width: 100%;
-    height: 100%;
-    z-index: 998;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    animation-name: sliderAppear;
-    animation-duration: 0.25s;
-    animation-timing-function: ease-in;
-  }
+.fa-play-circle {
+  margin-left: 4px;
+}
 
-  .request__description {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: white;
-    text-align: center;
-    max-width: 50%;
-    margin-bottom: 15px;
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.location__container {
+  z-index: 998;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.cards__location__container {
+  max-height: 100%;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border-radius: 10px;
+  padding: 50px;
+  animation-name: sliderAppear;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in;
+  box-shadow: 0 0px 25px rgba(255, 228, 78, 0.2);
+  overflow: auto;
+}
+
+.location__container-layer {
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  animation-name: sliderAppear;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in;
+}
+
+.request__description {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  max-width: 50%;
+  margin-bottom: 15px;
 }
 
 i {
@@ -107,100 +107,99 @@ i {
   transition: opacity 0.2s ease-in;
 }
 
-  @media screen and (max-width: 960px) {
-    .hero-container > h1 {
-      font-size: 70px;
-      margin-top: -150px;
-      text-align: center;
-    }
-
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero-btns {
-      margin: 10px 30px;
-    }
-
-    .request__description {
-      font-size: 1.125rem;
-      font-weight: 500;
-      max-width: 100%;
-      margin: 1rem 3rem 1rem 3rem;
-    }
-
-    .location__container {
-      z-index: 998;
-      position: fixed;
-      top: 0px;
-      width: 100%;
-      height: 100%;
-    }
-  
-    .cards__location__container {
-      padding: 1.5rem 0 1.5rem 0;
-      max-height: 90%;
-      max-width: 95%;
-      background-color: rgba(0, 0, 0, 0.9);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-      border-radius: 10px;
-      animation-name: sliderAppear;
-      animation-duration: 0.25s;
-      animation-timing-function: ease-in;
-      overflow: scroll;
-    }
-
-    
-    .btnClose-1 {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      font-size: 1.5rem;
-    }
-    
-  }
-  
-  @media screen and (max-width: 768px) {
-    .hero-container > h1 {
-      font-size: 50px;
-      margin-top: -100px;
-      text-align: center;
-    }
-  
-    .hero-container > p {
-      font-size: 30px;
-      text-align: center;
-      margin: 20px 20px 20px 20px;
-    }
-  
-    .btn-mobile {
-      display: block;
-      text-decoration: none;
-    }
-  
-    .btn {
-      width: 100%;
-    }
-
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero-btns {
-      margin: 10px 30px;
-    }
+@media screen and (max-width: 960px) {
+  .hero-container > h1 {
+    font-size: 70px;
+    margin-top: -150px;
+    text-align: center;
   }
 
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-btns {
+    margin: 10px 30px;
+  }
+
+  .request__description {
+    font-size: 1.125rem;
+    font-weight: 500;
+    max-width: 100%;
+    margin: 1rem 3rem 1rem 3rem;
+  }
+
+  .location__container {
+    z-index: 998;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cards__location__container {
+    padding: 1.5rem 0 1.5rem 0;
+    max-height: 90%;
+    max-width: 95%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    border-radius: 10px;
+    animation-name: sliderAppear;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+    overflow: scroll;
+  }
+
+  
+  .btnClose-1 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 1.5rem;
+  }
+    
+}
+  
+@media screen and (max-width: 768px) {
+  .hero-container > h1 {
+    font-size: 50px;
+    margin-top: -100px;
+    text-align: center;
+  }
+
+  .hero-container > p {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 20px 20px 20px;
+  }
+
+  .btn-mobile {
+    display: block;
+    text-decoration: none;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-btns {
+    margin: 10px 30px;
+  }
+}
 
 
 @keyframes sliderAppear {

@@ -1,4 +1,5 @@
 @import "~@flaticon/flaticon-uicons/css/all/all";
+@import "~react-image-gallery/styles/css/image-gallery.css";
 
 .gallery {
     display: flex;

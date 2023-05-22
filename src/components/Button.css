@@ -22,13 +22,24 @@
     background-color: var(--primary);
     color: #242424;
     border: 1px solid var(--primary);
+    animation: glow 1s ease-in-out infinite alternate;
   }
+
+@keyframes  glow {
+    from {
+      box-shadow: 0 0 5px rgba(255, 220, 115, 0.5), 0 0 10px rgba(255, 220, 115, 0.5), 0 0 15px rgba(255, 220, 115, 0.5), 0 0 20px rgba(255, 220, 115, 0.5), 0 0 25px rgba(255, 220, 115, 0.5), 0 0 30px rgba(255, 220, 115, 0.5), 0 0 35px rgba(255, 220, 115, 0.5);
+    }
+    to {
+      box-shadow: 0 0 10px rgba(255, 220, 115, 0.5), 0 0 15px rgba(255, 220, 115, 0.5), 0 0 20px rgba(255, 220, 115, 0.5), 0 0 25px rgba(255, 220, 115, 0.5), 0 0 30px rgba(255, 220, 115, 0.5), 0 0 40px rgba(255, 220, 115, 0.5), 0 0 50px rgba(255, 220, 115, 0.5);
+    }
+  }
+  
   
 .btn--outline {
     background-color: transparent;
-    color: #fff;
+    color: #ffdc73;
     padding: 8px 20px;
-    border: 1px solid var(--primary);
+    border: 1px solid #ffdc73;
     transition: all 0.3s ease-out;
   }
 
@@ -58,6 +69,13 @@
     transition: 250ms;
   }
 
+.btn--outline:hover {
+    transition: all 0.3s ease-out;
+    background: #ffdc73;
+    color: #242424;
+    transition: 250ms;
+  }
+
 .btn--secondary:hover {
     font-weight: 700;
     transition: all 0.3s ease-out;
@@ -66,3 +84,4 @@
     border: 1px solid #242424;
     transition: 250ms;
 }
+

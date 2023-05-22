@@ -76,7 +76,7 @@ function HeroSection() {
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
-               { getData ? storeList.map((item) => (
+               { getData ? (storeList.sort(function(a, b){return parseInt(a.distance) - parseInt(b.distance)})).map((item) => (
                     <CardItem 
                         key={item.id}
                         src={item.src}
