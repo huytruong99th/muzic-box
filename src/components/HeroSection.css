@@ -63,7 +63,7 @@
     transform: translate(-50%, -50%);
     z-index: 999;
     border-radius: 10px;
-    padding: 30px;
+    padding: 50px;
     animation-name: sliderAppear;
     animation-duration: 0.25s;
     animation-timing-function: ease-in;
@@ -98,8 +98,7 @@ i {
 
 .btnClose-1 {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  right: 0px;
   font-size: 2rem;
 }
 

@@ -12,23 +12,23 @@ export const user = {
 
 function HeroSection() {
     const [getData, setGetdata] = useState(false);
-
+    const [locationPer, setLocationPer] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+
     const handleOpenModal = () => {
         setOpenModal(!openModal);
-    };
+    }
     const handleCloseModal = () => {
         setOpenModal(!openModal);
-    };
+    }
     
-    function getPosition() {
+    const getPosition = () => {
         return new Promise((res, rej) => {
-            const option = {
+            navigator.geolocation.getCurrentPosition(res, rej, {
                 enableHighAccuracy: true,
                 timeout: 5000,
                 maximumAge: 0,
-            };
-            navigator.geolocation.getCurrentPosition(res, rej, option);
+            });
         });
     }
     
@@ -42,9 +42,10 @@ function HeroSection() {
     async function waitData() {
         await main();
         if (storeList[0].distance === null) {
+            setTimeout( () => setLocationPer(true), 2000);
             setTimeout(calDistance(), 2000);
         } else {
-            return
+            setTimeout(calDistance(), 2000);
         }
     }
 
@@ -64,14 +65,14 @@ function HeroSection() {
                 </Button>
             </div>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); main(); waitData(); displayData(); }}>
+                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); displayData(); }}>
                     TÌM CƠ SỞ GẦN NHẤT
                 </Button>
             </div>
         </div>
         { openModal ? <div className='location__container'>
             <div className='cards__location__container'>
-                <h5 className='request__description'>Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5>
+                { !locationPer ? <h5 className='request__description'>Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5> : <></> }
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
@@ -87,24 +88,6 @@ function HeroSection() {
                         renderType={false}
                         />
                     )) : <></>}
-                {/*<CardItem 
-                    text='MuzicBox 237 Xã Đàn'
-                />
-                <CardItem 
-                    text='MuzicBox 1027 Đường Láng'
-                />
-                <CardItem 
-                    text='MuzicBox 36 Hồ Tùng Mậu'
-                />
-                <CardItem 
-                    text='MuzicBox 1027 Đường Láng'
-                />
-                <CardItem 
-                    text='MuzicBox 36 Hồ Tùng Mậu'
-                />
-                <CardItem 
-                    text='MuzicBox 147 Trần Khát Chân'
-                />*/}
             </div>
             <div className='location__container-layer' onClick={handleOpenModal}></div>
         </div>
