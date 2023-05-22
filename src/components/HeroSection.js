@@ -6,8 +6,8 @@ import '../App.css'
 import { storeList, calDistance } from './data/store';
 
 export const user = {
-    lat: null,
-    long: null
+    lat: 21.017346452929058,
+    long: 105.8306251859128
 }
 
 function HeroSection() {
@@ -34,8 +34,8 @@ function HeroSection() {
     
     async function main() {
         var position = await getPosition()
-        user.lat = position.coords.latitude;
-        user.long = position.coords.longitude;
+        /*user.lat = position.coords.latitude;
+        user.long = position.coords.longitude;*/
         console.log(position);
     }
 
@@ -45,7 +45,7 @@ function HeroSection() {
             setTimeout( () => setLocationPer(true), 2000);
             setTimeout(calDistance(), 2000);
         } else {
-            setTimeout(calDistance(), 2000);
+            return;
         }
     }
 
