@@ -22,17 +22,14 @@ function HeroSection() {
     };
     
     function getPosition() {
-        return new Promise((resolve, reject) => {
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(resolve, reject, {
-                timeout: 5000,
-                maximumAge: 2000,
+        return new Promise((res, rej) => {
+            const option = {
                 enableHighAccuracy: true,
-              });
-            } else {
-              reject(new Error('Browser does not support geolocation!'));
-            }
-          });
+                timeout: 5000,
+                maximumAge: 0,
+            };
+            navigator.geolocation.getCurrentPosition(res, rej, option);
+        });
     }
     
     async function main() {
