@@ -34,18 +34,18 @@ function HeroSection() {
     
     async function main() {
         var position = await getPosition()
-        user.lat = 21.017346452929058;
-        user.long = 105.8306251859128;
-        console.log(position);
+        user.lat = position.coords.latitude;
+        user.long = position.coords.longitude;
+        console.log(user);
     }
 
     async function waitData() {
         await main();
         if (storeList[0].distance === null) {
             setTimeout( () => setLocationPer(true), 2000);
-            setTimeout(calDistance(), 2000);
+            setTimeout(calDistance(), 1000);
         } else {
-            setTimeout(calDistance(), 2000);
+            return;
         }
     }
 
@@ -72,7 +72,7 @@ function HeroSection() {
         </div>
         { openModal ? <div className='location__container'>
             <div className='cards__location__container'>
-                { !locationPer ? <h5 className='request__description'>Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5> : <></> }
+                { true ? <h5 className='request__description'>{user.lat}Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5> : <></> }
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
