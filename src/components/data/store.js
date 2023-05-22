@@ -85,37 +85,35 @@ export const storeList = [
     }
 ];
 
-
-
 const API = 'Anwq3ixnWe6DKcD1BjeUXZrSrhR4v1676Q1Tngq3SFkAQbBpz_17Jw_4RAvqGwlM';
 
 function calDistance() {
-            for (let i = 0 ; i < storeList.length ; i++) {
-                const des = {
-                    lat: null,
-                    long: null
-                };
-                let currentdate = new Date();
-                currentdate =  currentdate.toISOString();
-                des.lat = storeList[i].location[0];
-                des.long = storeList[i].location[1];
-                let endpoint = `https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins=${user.lat},${user.long}&destinations=${des.lat},${des.long}&travelMode=driving&startTime=${currentdate}&timeUnit=minute&key=${API}`
-                
-                fetch(endpoint).then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    throw new Error('Request failed!');
-                }, networkError => {
-                    console.log(networkError.messege)
-                }).then(jsonResponse => {
-                    console.log(jsonResponse)
-                    const result = jsonResponse;
-                    const distance = result["resourceSets"][0]["resources"][0]["results"][0]["travelDistance"];
-                    const textDistance = `${distance.toFixed(1)} km`;
-                    storeList[i].distance = textDistance;
-                });
-            };
+    for (let i = 0 ; i < storeList.length ; i++) {
+        const des = {
+            lat: null,
+            long: null
+        };
+        let currentdate = new Date();
+        currentdate =  currentdate.toISOString();
+        des.lat = storeList[i].location[0];
+        des.long = storeList[i].location[1];
+        let endpoint = `https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins=${user.lat},${user.long}&destinations=${des.lat},${des.long}&travelMode=driving&startTime=${currentdate}&timeUnit=minute&key=${API}`
+        
+        fetch(endpoint).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Request failed!');
+        }, networkError => {
+            console.log(networkError.messege)
+        }).then(jsonResponse => {
+            console.log(jsonResponse)
+            const result = jsonResponse;
+            const distance = result["resourceSets"][0]["resources"][0]["results"][0]["travelDistance"];
+            const textDistance = `${distance.toFixed(1)} km`;
+            storeList[i].distance = textDistance;
+        });
+    };
 };
 
 /* async function getDistance() {
