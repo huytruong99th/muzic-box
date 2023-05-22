@@ -90,8 +90,6 @@ export const storeList = [
 const API = 'Anwq3ixnWe6DKcD1BjeUXZrSrhR4v1676Q1Tngq3SFkAQbBpz_17Jw_4RAvqGwlM';
 
 function calDistance() {
-    navigator.permissions.query({ name: "geolocation" }).then((result) => {
-        if (result.state === "granted") {
             for (let i = 0 ; i < storeList.length ; i++) {
                 const des = {
                     lat: null,
@@ -117,13 +115,7 @@ function calDistance() {
                     const textDistance = `${distance.toFixed(1)} km`;
                     storeList[i].distance = textDistance;
                 });
-
             };
-
-        } else {
-          return;
-        }
-      });
 };
 
 /* async function getDistance() {
