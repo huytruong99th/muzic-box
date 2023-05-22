@@ -1,7 +1,3 @@
-:root {
-    --primary: #fff;
-}
-
 .btn {
     padding: 8px 20px;
     border-radius: 2px;
@@ -10,6 +6,21 @@
     cursor: pointer;
   }
 
+.btn--primary {
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(208,187,119,0.5) 79%, rgba(255,220,115,0.7) 100%);
+  color: #ffe38e;
+  border: 1px solid #ffdc73;
+}
+
+.btn--primary:hover {
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(208,187,119,0.9) 79%, rgba(255,220,115,1) 100%);
+  color: #ffe38e;
+  border: 1px solid #ffdc73;
+  box-shadow: rgba(255, 220, 115, 0.8) 0px 0px 10px 5px;
+  transition: all 0.2s ease-out;
+}
+
+
 .btn--secondary {
     background-color: transparent;
     color: #fff;
@@ -17,20 +28,23 @@
     border: 1px solid var(--primary);
     transition: all 0.3s ease-out;
   }
-  
-.btn--primary {
-    background-color: var(--primary);
-    color: #242424;
-    border: 1px solid var(--primary);
+
+.btn--glow {
+    background-color: transparent;
+    color: #ffdc73;
+    padding: 8px 25px;
+    border: 1px solid #ffdc73;
+    transition: all 0.3s ease-out;
     animation: glow 1s ease-in-out infinite alternate;
   }
 
+
 @keyframes  glow {
     from {
-      box-shadow: 0 0 5px rgba(255, 220, 115, 0.5), 0 0 10px rgba(255, 220, 115, 0.5), 0 0 15px rgba(255, 220, 115, 0.5), 0 0 20px rgba(255, 220, 115, 0.5), 0 0 25px rgba(255, 220, 115, 0.5), 0 0 30px rgba(255, 220, 115, 0.5), 0 0 35px rgba(255, 220, 115, 0.5);
+      box-shadow: 0 0 5px rgba(255, 220, 115, 0.3), 0 0 10px rgba(255, 220, 115, 0.5), 0 0 15px rgba(255, 220, 115, 0.5), 0 0 20px rgba(255, 220, 115, 0.5), 0 0 25px rgba(255, 220, 115, 0.5), 0 0 30px rgba(255, 220, 115, 0.35), 0 0 35px rgba(255, 220, 115, 0.5);
     }
     to {
-      box-shadow: 0 0 10px rgba(255, 220, 115, 0.5), 0 0 15px rgba(255, 220, 115, 0.5), 0 0 20px rgba(255, 220, 115, 0.5), 0 0 25px rgba(255, 220, 115, 0.5), 0 0 30px rgba(255, 220, 115, 0.5), 0 0 40px rgba(255, 220, 115, 0.5), 0 0 50px rgba(255, 220, 115, 0.5);
+      box-shadow: 0 0 10px rgba(255, 220, 115, 0.3), 0 0 15px rgba(255, 220, 115, 0.5), 0 0 20px rgba(255, 220, 115, 0.5), 0 0 25px rgba(255, 220, 115, 0.5), 0 0 30px rgba(255, 220, 115, 0.5), 0 0 40px rgba(255, 220, 115, 0.35), 0 0 50px rgba(255, 220, 115, 0.5);
     }
   }
   
@@ -59,29 +73,4 @@
     padding: 12px 26px;
     font-size: 20px;
     font-weight: 500;
-  }
-  
-.btn--large:hover,
-.btn--medium:hover {
-    transition: all 0.3s ease-out;
-    background: #fff;
-    color: #242424;
-    transition: 250ms;
-  }
-
-.btn--outline:hover {
-    transition: all 0.3s ease-out;
-    background: #ffdc73;
-    color: #242424;
-    transition: 250ms;
-  }
-
-.btn--secondary:hover {
-    font-weight: 700;
-    transition: all 0.3s ease-out;
-    background: #ffdc73;
-    color: #242424;
-    border: 1px solid #242424;
-    transition: 250ms;
 }
-

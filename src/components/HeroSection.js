@@ -12,7 +12,6 @@ export const user = {
 
 function HeroSection() {
     const [getData, setGetdata] = useState(false);
-    const [locationPer, setLocationPer] = useState(false);
     const [openModal, setOpenModal] = useState(false);
 
     const handleOpenModal = () => {
@@ -43,7 +42,6 @@ function HeroSection() {
         await main();
         if (storeList[0].distance === null) {
             setTimeout(calDistance(), 1000);
-            setTimeout( () => setLocationPer(true), 2000);
         } else {
             return;
         }
@@ -60,19 +58,19 @@ function HeroSection() {
         <p>MuzicBox cung cấp dịch vụ quán hát Karaoke hàng đầu tại Hà Nội</p>
         <div className='btn-container'>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large' path='/dat-phong'>
+                <Button className='btns' buttonStyle='btn--glow' buttonSize='btn--large' path='/dat-phong'>
                     ĐẶT PHÒNG TRỰC TUYẾN
                 </Button>
             </div>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={ () => {handleOpenModal(); displayData(); }}>
+                <Button className='btns' buttonStyle='btn--glow' buttonSize='btn--large' onClick={ () => {handleOpenModal(); displayData(); }}>
                     TÌM CƠ SỞ GẦN NHẤT
                 </Button>
             </div>
         </div>
         { openModal ? <div className='location__container'>
             <div className='cards__location__container'>
-                { !locationPer ? <h5 className='request__description'>Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5> : <></> }
+                <h5 className='request__description'>Cho phép website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5>
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
