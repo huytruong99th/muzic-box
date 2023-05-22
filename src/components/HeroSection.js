@@ -42,8 +42,8 @@ function HeroSection() {
     async function waitData() {
         await main();
         if (storeList[0].distance === null) {
-            setTimeout( () => setLocationPer(true), 2000);
             setTimeout(calDistance(), 1000);
+            setTimeout( () => setLocationPer(true), 2000);
         } else {
             return;
         }
@@ -72,7 +72,7 @@ function HeroSection() {
         </div>
         { openModal ? <div className='location__container'>
             <div className='cards__location__container'>
-                { true ? <h5 className='request__description'>{user.lat}Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5> : <></> }
+                { !locationPer ? <h5 className='request__description'>Cho phép Website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5> : <></> }
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
