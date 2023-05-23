@@ -31,11 +31,6 @@
   padding-right: 10px;
 }
 
-.fa-typo3 {
-  margin-left: 0.5rem;
-  font-size: 1.8rem;
-}
-
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -69,10 +64,6 @@
   color: #ffdc73;
   font-weight: 500;
   transition: all 0.2s ease-out;
-}
-
-.nav-links-mobile {
-  display: none;
 }
 
 .menu-icon {
@@ -119,7 +110,7 @@
     display: flex;
     flex-direction: column;
     top: 0;
-    left: 10px;
+    left: 12px;
     transform: translate(0%, 25%);
     font-size: 1rem;
   }
@@ -132,8 +123,8 @@
   .menu-icon {
     display: block;
     position: absolute;
-    top: 0;
-    right: 10px;
+    top: 10px;
+    right: 12px;
     transform: translate(0, 50%);
     cursor: pointer;
   }
