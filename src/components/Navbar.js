@@ -28,7 +28,7 @@ function Navbar() {
                   <Link to="/" className="navbar-logo">
                       <span>MuzicBox</span> <svg class="logo-main" xmlns="http://www.w3.org/2000/svg" id="Solid" height="32" viewBox="0 0 64 64" width="32"><path d="m59.13 37.28-15 2.5a2.251 2.251 0 0 0 -1.88 2.22v13.325a3.75 3.75 0 1 0 4.5 3.675v-10.9l10.5-1.969v6.192a3.75 3.75 0 1 0 4.5 3.677v-16.5a2.25 2.25 0 0 0 -2.62-2.22z"/><path d="m7 28.749a3.75 3.75 0 0 0 3.75-3.749v-10.9l9.388-1.761a.749.749 0 0 0 .612-.737v-6.602a.75.75 0 0 0 -.873-.74l-11.747 1.958a2.243 2.243 0 0 0 -1.88 2.22v12.887a3.75 3.75 0 0 0 .75 7.424z"/><path d="m29 33.237-1.414 1.414a1.25 1.25 0 0 0 1.768 1.768l1.414-1.414a1.25 1.25 0 0 0 -1.768-1.768z"/><path d="m25.859 36.373-2.521 2.521a1.25 1.25 0 0 0 1.768 1.768l2.521-2.521a2.636 2.636 0 0 1 -1.768-1.768z"/><path d="m61.652 9.864-7.516-7.516a3.746 3.746 0 0 0 -4.994-.277l-10.342 8.274 14.855 14.855 8.274-10.343a3.746 3.746 0 0 0 -.277-4.993z"/><path d="m53.651 28.38a.75.75 0 0 0 0-1.061l-16.97-16.97a.75.75 0 0 0 -1.061 0l-2.3 2.3 18.033 18.029z"/><path d="m2.232 53.455a3.743 3.743 0 0 0 .117 5.181l3.015 3.015a3.743 3.743 0 0 0 5.181.117l3.265-2.984-8.594-8.594z"/><path d="m30.106 22.956 10.938 10.938 4.209.42a4.727 4.727 0 0 0 3.831-1.367l1.209-1.208-18.032-18.032-1.208 1.209a4.727 4.727 0 0 0 -1.367 3.831z"/><path d="m29.093 24.064-22.864 25.018 8.689 8.689 25.018-22.864zm-2.926 17.658a2.75 2.75 0 1 1 -3.889-3.889l5.657-5.657a2.75 2.75 0 0 1 3.889 3.889z"/></svg>
                   </Link>
-                  {!button && <Button buttonStyle='btn--outline' path='/dat-phong'>ĐẶT PHÒNG</Button>}
+                  {!button && <Button buttonStyle='btn--glow--outline' path='/dat-phong'>ĐẶT PHÒNG</Button>}
                 </div>
                 <div className="menu-icon" onClick={handleClick}>
                  { click ?
@@ -60,7 +60,7 @@ function Navbar() {
                   </li>
               
                 </ul>
-                {button && <Button buttonStyle='btn--primary' onClick={() => window.scrollTo(0, 0)} path='/dat-phong'>ĐẶT PHÒNG</Button>}
+                {button && <Button buttonStyle='btn--glow' onClick={() => window.scrollTo(0, 0)} path='/dat-phong'>ĐẶT PHÒNG</Button>}
             </div>
         </nav>
     </>

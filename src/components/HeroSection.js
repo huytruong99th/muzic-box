@@ -13,6 +13,7 @@ export const user = {
 function HeroSection() {
     const [getData, setGetdata] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+    const [posPermission, setPosPermission] = useState(false);
 
     const handleOpenModal = () => {
         setOpenModal(!openModal);
@@ -35,6 +36,7 @@ function HeroSection() {
         var position = await getPosition()
         user.lat = position.coords.latitude;
         user.long = position.coords.longitude;
+        setPosPermission(true);
         console.log(user);
     }
 
@@ -55,10 +57,10 @@ function HeroSection() {
   return (
     <div className='hero-container'>
         <h1>MuzicBox xin kính chào quý khách</h1>
-        <p>MuzicBox cung cấp dịch vụ quán hát Karaoke hàng đầu tại Hà Nội</p>
+        <p>MuzicBox cung cấp dịch vụ Karaoke hàng đầu tại Hà Nội</p>
         <div className='btn-container'>
             <div className='hero-btns'>
-                <Button className='btns' buttonStyle='btn--glow' buttonSize='btn--large' path='/dat-phong'>
+                <Button className='btns' buttonStyle='btn--glow--outline' buttonSize='btn--large' path='/dat-phong'>
                     ĐẶT PHÒNG TRỰC TUYẾN
                 </Button>
             </div>
@@ -70,7 +72,7 @@ function HeroSection() {
         </div>
         { openModal ? <div className='location__container'>
             <div className='cards__location__container'>
-                <h5 className='request__description'>Cho phép website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5>
+                { !posPermission ? <h5 className='request__description'>Cho phép website truy cập vị trí của bạn để tìm kiếm cơ sở gần nhất</h5> : <></>}
                 <div className='btnClose'>
                 <i className="fi fi-sr-cross-circle btnClose-1" onClick={handleCloseModal}></i>
                 </div>
