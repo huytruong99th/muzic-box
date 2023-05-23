@@ -66,7 +66,7 @@ function CardItem(props) {
                 </div>
                 <div className='cards__item__list__action'>
                     <Button buttonStyle='btn--primary' buttonSize='btn--small' className='first-btn' path={props.path}>ĐẶT PHÒNG</Button>
-                    <Button buttonStyle='btn--outline' buttonSize='btn--small'>CHỈ ĐƯỜNG</Button>
+                    <Button buttonStyle='btn--outline' buttonSize='btn--small' path={props.path2} target="_blank" rel="noopener noreferrer">CHỈ ĐƯỜNG</Button>
                 </div>
         </li>
   );

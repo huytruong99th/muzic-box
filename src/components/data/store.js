@@ -7,6 +7,7 @@ export const storeList = [
         text: 'MuzicBox 237 Xã Đàn',
         label: 'Đống Đa',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [21.017346452929058, 105.8306251859128]
         
@@ -18,6 +19,7 @@ export const storeList = [
         text: 'MuzicBox 1027 Đường Láng',
         label: 'Đống Đa',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [21.023192283554174, 105.79964961582967]
     },
@@ -28,6 +30,7 @@ export const storeList = [
         text: 'MuzicBox 147 Trần Khát Chân',
         label: 'Hai Bà Trưng',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [21.006904541866838, 105.86603354956688]
     },
@@ -38,6 +41,7 @@ export const storeList = [
         text: 'MuzicBox 28 Ngô Gia Tự',
         label: 'Long Biên',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [21.05633828518619, 105.88984394034304]
     },
@@ -48,6 +52,7 @@ export const storeList = [
         text: 'MuzicBox 32 Xuân Thuỷ',
         label: 'Cầu Giấy',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [21.036413861411678, 105.78945836471748]
     },
@@ -58,6 +63,7 @@ export const storeList = [
         text: 'MuzicBox 50 Vườn Cam',
         label: 'Nam Từ Liêm',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [21.014168680516704, 105.77103924140172]
     },
@@ -68,6 +74,7 @@ export const storeList = [
         text: 'MuzicBox 70 Chiến Thắng',
         label: 'Hà Đông',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [20.982354557564165, 105.79411109075095]
 
@@ -79,6 +86,7 @@ export const storeList = [
         text: 'MuzicBox 92 Bùi Xương Trạch',
         label: 'Thanh Xuân',
         path: '/dat-phong',
+        path2: '',
         distance: null,
         location: [20.988681331945923, 105.81613058249357]
 
@@ -98,7 +106,7 @@ function calDistance() {
         des.lat = storeList[i].location[0];
         des.long = storeList[i].location[1];
         let endpoint = `https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins=${user.lat},${user.long}&destinations=${des.lat},${des.long}&travelMode=driving&startTime=${currentdate}&timeUnit=minute&key=${API}`
-        
+        storeList[i].path2 = `https://www.google.com/maps/dir/${user.lat},${user.long}/${storeList[i].location[0]},${storeList[i].location[1]}/`
         fetch(endpoint).then(response => {
             if (response.ok) {
                 return response.json();

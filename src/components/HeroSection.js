@@ -83,6 +83,7 @@ function HeroSection() {
                         text={item.text}
                         label={item.label}
                         path={item.path}
+                        path2={item.path2}
                         distance={item.distance}
                         location={item.location}
                         renderType={false}
