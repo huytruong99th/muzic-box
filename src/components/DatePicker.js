@@ -56,6 +56,13 @@ function DatePicker() {
         })
     }
 
+    const Back2 = () => {
+        setStore({
+            Store: null
+        });
+    }
+
+
     const times = getTimes()
 
     const handleStoreClick = (newStore) => {
@@ -66,8 +73,17 @@ function DatePicker() {
         console.log(store.Store)
     }
 
-    const [locationPermission, setLocationPermission] = useState(false)
+    const [mobileMode, setMobileMode] = useState(false);
+    const showMobile = () => {
+        if(window.innerWidth <= 960) {
+            setMobileMode(true);
+        } else {
+            setMobileMode(false);
+        }
+      }
+    window.addEventListener('resize', showMobile);
 
+    const [locationPermission, setLocationPermission] = useState(false)
     const checkPermission = () => {
       navigator.permissions.query({ name: "geolocation" }).then((result) => {
         if (result.state === "granted") {
@@ -77,7 +93,6 @@ function DatePicker() {
         }
       })
     }
-
     setInterval(checkPermission, 3000);
 
 
@@ -97,7 +112,6 @@ function DatePicker() {
                         path={item.path}
                         distance={item.distance}
                         location={item.location}
-
                         locationPermission={locationPermission}
                         renderType={true}
                         onClick={handleStoreClick}
@@ -106,23 +120,27 @@ function DatePicker() {
                 </div>
             </div>
 
+            {store.Store ? 
             <div className='date-picker-container'>
-                <div>
                     <h3>CHỌN THỜI GIAN ĐẶT PHÒNG</h3>
-                </div>
-
-                { store.Store ? 
+                    <p className='font-medium'>Cơ sở đã chọn: <span className='font-semibold text-yellow-600'>{store.Store}</span></p>
+                    {!date.justDate ?
+                    <div>
+                        <button className='rounded-lg bg-gray-100 p-2 font-semibold back-btn' onClick={Back2}>CHỌN CƠ SỞ</button>
+                    </div>
+                    :
+                    <></>}
                 <div className='date-picker-wrapper'>
                     {date.justDate ? 
                     <div className='mt-4'>
                         <div className='mb-5'>
                             <button className='rounded-lg bg-gray-100 p-2 font-semibold back-btn' onClick={Back}>← QUAY LẠI</button>
                         </div>
-                        <div className ='flex gap-4 flex-wrap'>
+                        <div className ='flex gap-4 flex-wrap time-container'>
                             {
                             times?.map((time, i) => (
                                 <div key={`time-${i}`}>
-                                    <button type='button' className='rounded-lg bg-gray-100 p-2' onClick={() => setDate((prev => ({...prev, dateTime: time })))}>
+                                    <button type='button' className='rounded-lg bg-gray-100 p-2 time--button' onClick={() => setDate((prev => ({...prev, dateTime: time })))}>
                                         {format(time, 'kk:mm')}
                                     </button>
                                 </div>
@@ -179,12 +197,10 @@ function DatePicker() {
                     />
                     }
 
-                </div>
-                :
-                <div></div>
-                }   
-
+                </div> 
             </div>
+                :
+            <></>}
         </div>
     </>
   )
