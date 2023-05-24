@@ -157,12 +157,22 @@ function DatePicker() {
                             <div>
                                 <form className='customer-information'>
                                     <div>
+                                        <label for='name-input' className='font-semibold'>Nhập Tên của bạn: </label>
+                                        <input 
+                                            type='text' 
+                                            id='name-input' 
+                                            name="name"
+                                            required
+                                        >
+                                        </input>
+                                    </div>
+                                    <div>
                                         <label for='phone-number-input' className='font-semibold'>Nhập SĐT của bạn: </label>
                                         <input 
                                             type='tel' 
                                             id='phone-number-input' 
                                             name="phone"
-                                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                            pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
                                             maxlength="10"
                                             required
                                         >
