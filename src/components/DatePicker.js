@@ -124,7 +124,7 @@ function DatePicker() {
             <div className='date-picker-container'>
                     <h3>CHỌN THỜI GIAN ĐẶT PHÒNG</h3>
                     <p className='font-medium'>Cơ sở đã chọn: <span className='font-semibold text-yellow-600'>{store.Store}</span></p>
-                    {!date.justDate ?
+                    {!date.justDate && mobileMode ?
                     <div>
                         <button className='rounded-lg bg-gray-100 p-2 font-semibold back-btn' onClick={Back2}>CHỌN CƠ SỞ</button>
                     </div>
