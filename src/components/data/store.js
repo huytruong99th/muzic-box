@@ -3,7 +3,7 @@ import { user } from "../HeroSection";
 export const storeList = [
     {
         id: 1,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 237 Xã Đàn',
         label: 'Đống Đa',
         path: '/dat-phong',
@@ -15,7 +15,7 @@ export const storeList = [
 
     {   
         id: 2,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 1027 Đường Láng',
         label: 'Đống Đa',
         path: '/dat-phong',
@@ -26,7 +26,7 @@ export const storeList = [
 
     {
         id: 3,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 147 Trần Khát Chân',
         label: 'Hai Bà Trưng',
         path: '/dat-phong',
@@ -37,7 +37,7 @@ export const storeList = [
 
     {
         id: 4,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 28 Ngô Gia Tự',
         label: 'Long Biên',
         path: '/dat-phong',
@@ -48,7 +48,7 @@ export const storeList = [
 
     {
         id: 5,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 32 Xuân Thuỷ',
         label: 'Cầu Giấy',
         path: '/dat-phong',
@@ -59,7 +59,7 @@ export const storeList = [
 
     {   
         id: 6,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 50 Vườn Cam',
         label: 'Nam Từ Liêm',
         path: '/dat-phong',
@@ -70,7 +70,7 @@ export const storeList = [
 
     {   
         id: 7,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 70 Chiến Thắng',
         label: 'Hà Đông',
         path: '/dat-phong',
@@ -82,7 +82,7 @@ export const storeList = [
 
     {
         id: 8,
-        src: "/images/cardbackground.png",
+        src: "/images/cardbackground.jpg",
         text: 'MuzicBox 92 Bùi Xương Trạch',
         label: 'Thanh Xuân',
         path: '/dat-phong',
