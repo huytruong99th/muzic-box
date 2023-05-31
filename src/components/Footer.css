@@ -56,7 +56,24 @@
 
 .footer-about {
     max-width: 350px;
+    display: flex;
+    flex-direction: column;
 }
+
+.social-media {
+    margin-top: 1.5rem;
+}
+
+.social-media i {
+   font-size: 1.5rem;
+   margin-right: 20px;
+   opacity: 0.8;
+}
+
+.social-media i:hover {
+   color: #ffdc73;
+
+ }
 
 @media screen and (max-width: 960px) {
     .footer-container {

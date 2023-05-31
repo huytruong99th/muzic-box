@@ -9,6 +9,20 @@ function Footer() {
             <div className='footer-about'>
                 <h2>VỀ KARAOKE MUZICBOX</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae nunc a erat laoreet facilisis at vitae mi. Suspendisse fermentum massa vel massa rhoncus finibus. Cras malesuada velit non suscipit lobortis. Phasellus id maximus metus. Maecenas nec placerat orci, eget molestie erat. </p>
+                
+                
+                <div className='social-media'>
+                    <h2>LIÊN HỆ</h2>
+                    <a href="https://facebook.com">
+                        <i class="fi fi-brands-facebook"></i>
+                    </a>
+                    <a href="mailto: huytruong99th@outlook.com">
+                        <i class="fi fi-sr-envelope"></i>
+                    </a>
+                    <a href="tel:+84363506281">
+                        <i class="fi fi-sr-circle-phone-flip"></i>
+                    </a>
+                </div>
             </div>
             <div className='footer-location'>
                 <h2>HỆ THỐNG KARAOKE MUZICBOX</h2>
