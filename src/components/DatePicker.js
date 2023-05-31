@@ -6,6 +6,7 @@ import CardItem from './CardItem';
 import { add, format, setDefaultOptions } from "date-fns";
 import { vi } from 'date-fns/locale'
 import { storeList } from './data/store';
+import CustomerForm from './CustomerForm';
 
 
 function DatePicker() {
@@ -123,7 +124,7 @@ function DatePicker() {
             {store.Store ? 
             <div className='date-picker-container'>
                     <h3>CHỌN THỜI GIAN ĐẶT PHÒNG</h3>
-                    <p className='font-medium'>Cơ sở đã chọn: <span className='font-semibold text-yellow-600'>{store.Store}</span></p>
+                    <p className='font-medium'>Cơ sở: <span className='font-semibold text-yellow-600'>{store.Store}</span></p>
                     {!date.justDate && mobileMode ?
                     <div>
                         <button className='rounded-lg bg-gray-100 p-2 font-semibold back-btn' onClick={Back2}>CHỌN CƠ SỞ</button>
@@ -155,7 +156,8 @@ function DatePicker() {
                                 <p className='font-medium'>Ngày: <span className='font-semibold text-yellow-600 mr-3'>{String(format(date.justDate, 'dd/MM/yyyy'))}</span> Giờ: <span className='font-semibold text-yellow-600'>{String(format(date.dateTime, 'kk:mm'))}</span></p>
                             </div>
                             <div>
-                                <form className='customer-information'>
+                                <CustomerForm />
+                                {/*<form className='customer-information'>
                                     <div>
                                         <label for='name-input' className='font-semibold'>Nhập Tên của bạn: </label>
                                         <input 
@@ -191,7 +193,7 @@ function DatePicker() {
                                     <div>
                                         <input type='submit' value='ĐẶT PHÒNG' />
                                     </div>
-                                </form>
+                                </form>*/}
                             </div>
                         </div>
                             : 
