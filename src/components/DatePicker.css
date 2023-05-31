@@ -310,6 +310,7 @@ input[type=submit]:hover {
       top: 80px;
       overflow: scroll;
       padding: 1rem 0.5rem 1rem 0.5rem;
+      z-index: 10000;
   }
 
   .date-picker-container h3 {
