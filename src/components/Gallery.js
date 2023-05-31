@@ -5,34 +5,34 @@ import ImageGallery from 'react-image-gallery';
 
 const galleryImages = [
     {
-        img: '/images/co-so/1.jpg'
+        img: '/images/co-so/1.webp'
     },
     {
-        img: '/images/co-so/2.jpg'
+        img: '/images/co-so/2.webp'
     },
     {
-        img: '/images/co-so/3.jpg'
+        img: '/images/co-so/3.webp'
     },
     {
-        img: '/images/co-so/4.jpg'
+        img: '/images/co-so/4.webp'
     },
     {
-        img: '/images/co-so/5.jpg'
+        img: '/images/co-so/5.webp'
     },
     {
-        img: '/images/co-so/6.jpg'
+        img: '/images/co-so/6.webp'
     },
     {
-        img: '/images/co-so/7.jpg'
+        img: '/images/co-so/7.webp'
     },
     {
-        img: '/images/co-so/8.jpg'
+        img: '/images/co-so/8.webp'
     },
     {
-        img: '/images/co-so/9.jpg'
+        img: '/images/co-so/9.webp'
     },
     {
-        img: '/images/co-so/10.jpg'
+        img: '/images/co-so/10.webp'
     },
 ]
 
